@@ -163,12 +163,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Toast.makeText(getApplicationContext(),"Debes ingresar un valor", Toast.LENGTH_SHORT).show();
                     }else{
                         textView.setText(String.valueOf(getResult()));
+                        operation = 0;
+                        textViewNumber.setText("");
                     }
                 }else {operations(operation);
                     textView.setText(String.valueOf(getResult()));
+                    textViewNumber.setText("");
                 }
-                textViewNumber.setText("");
-                operation = 0;
                 break;
         }
     }
@@ -176,15 +177,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void operations(int operation) {
         switch (operation){
             case 1:
+                setValueOne(Float.valueOf(getValue()));
                 setResult(getValueOne() + getResult());
                 break;
             case 2:
+                setValueOne(Float.valueOf(getValue()));
                 setResult(getValueOne() * getResult());
                 break;
             case 3:
+                setValueOne(Float.valueOf(getValue()));
                 setResult(getResult()/getValueOne());
                 break;
             case 4:
+                setValueOne(Float.valueOf(getValue()));
                 setResult(getResult() - getValueOne());
                 break;
         }
